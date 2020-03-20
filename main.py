@@ -21,7 +21,10 @@ def fetchLyrics(artist, title):
     url = "https://api.lyrics.ovh/v1/{}/{}".format(artist, title)
     resp = http.request('GET', url)
     apiResponse = json.loads(resp.data.decode('utf8'))
-    print(apiResponse['lyrics'])
+    if 'lyrics' in apiResponse.keys():
+        print(apiResponse['lyrics'])
+    else:
+        print("No Lyrics Found")
     # print(type(apiResponse['lyrics']))
 
 fetchLyrics(artist, title)
