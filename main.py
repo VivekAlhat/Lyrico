@@ -23,6 +23,8 @@ def fetchLyrics(artist, title):
     apiResponse = json.loads(resp.data.decode('utf8'))
     if 'lyrics' in apiResponse.keys():
         print(apiResponse['lyrics'])
+        # with open("{}.txt".format(title), "w") as lyricFile:
+        #     lyricFile.write(apiResponse['lyrics'])
     else:
         print("No Lyrics Found")
     # print(type(apiResponse['lyrics']))
