@@ -29,4 +29,5 @@ def fetchLyrics(artist, title):
         print("No Lyrics Found")
     # print(type(apiResponse['lyrics']))
 
+
 fetchLyrics(artist, title)
