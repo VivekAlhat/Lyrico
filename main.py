@@ -1,4 +1,5 @@
 import re
+import sys
 import json
 import urllib3
 
@@ -9,10 +10,14 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 http = urllib3.PoolManager()
 
 # Getting input
-artist = input("Artist: ")
+
+artist = sys.argv[1]
+title = sys.argv[2]
+
+# artist = input("Artist: ")
 artistList = re.split(r'\s|-', artist)
 artist = "-".join(artistList)
-title = input("Track: ")
+# title = input("Track: ")
 titleList = re.split(r'\s|-', title)
 title = "-".join(titleList)
 
